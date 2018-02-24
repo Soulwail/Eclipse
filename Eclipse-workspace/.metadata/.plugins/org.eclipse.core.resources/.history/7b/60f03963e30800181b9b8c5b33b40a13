@@ -1,0 +1,11 @@
+package com.imooc.thread;
+
+public class Dog implements Runnable {
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

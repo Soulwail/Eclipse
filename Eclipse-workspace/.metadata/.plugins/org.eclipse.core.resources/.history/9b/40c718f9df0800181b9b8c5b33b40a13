@@ -1,0 +1,5 @@
+package com.imooc.thread;
+
+public class Thread extends Thread {
+	
+}

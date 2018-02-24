@@ -1,0 +1,161 @@
+package goodstest;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+import java.util.Set;
+
+import goods.Goods;
+import goods.GoodsManage;
+import goods.ShoppingCart;
+
+public class TestDemo {
+	static GoodsManage goodsManage = new GoodsManage();
+	ShoppingCart shoppingCart = new ShoppingCart();
+
+	public void mainMenu() {
+		System.out.println("***********************************");
+		System.out.println("             **主菜单**");
+		System.out.println("             1--商品管理");
+		System.out.println("             2--购物车");
+		System.out.println("             0--退出");
+		System.out.println("***********************************");
+		System.out.println("请输入对应数字进行操作：");
+	}
+
+	public void goodsMan() {
+		System.out.println("*****************************************************");
+		System.out.println("                 **商品管理**");
+		System.out.println("                1--商品信息导入");
+		System.out.println("                2--显示所有商品信息");
+		System.out.println("                9--返回上一级菜单");
+		System.out.println("*****************************************************");
+		System.out.println("请输入对应的数字对商品进行管理：");
+
+		TestDemo test = new TestDemo();
+		Scanner scr = new Scanner(System.in);
+		int i;
+
+		do {
+			i = scr.nextInt();
+
+			if (i == 9 || i == 1 || i == 2) {
+				switch (i) {
+				case 1:
+					System.out.println("商品信息导入");
+					goodsManage.importGoods(); // 商品信息导入
+					goodsMan();
+					break;
+				case 2:
+					if (goodsManage.getGoodsSet().isEmpty()) {
+						System.out.println("还没有商品，记得导入商品信息哟！");
+					} else {
+						System.out.println("显示所有商品信息");
+						goodsManage.displayAllGoods(); // 显示所有商品信息
+					}
+					goodsMan();
+					break;
+				case 9:
+					main(null);
+					break;
+				}
+
+			} else {
+				System.out.println("该数字没有对应的操作！");
+			}
+
+		} while (i != 9);
+
+	}
+
+	public void shoppingCartMan() {
+
+		System.out.println("*****************************************************");
+		System.out.println("                 **购物车管理**");
+		System.out.println("                1--添加商品到购物车");
+		System.out.println("                2--修改购物车中的商品数量");
+		System.out.println("                3--显示购物车中的所有商品");
+		System.out.println("                4--结算");
+		System.out.println("                9--返回上一级菜单");
+		System.out.println("*****************************************************");
+		System.out.println("请输入对应的数字对购物车进行操作：");
+
+		TestDemo test = new TestDemo();
+		Scanner scr2 = new Scanner(System.in);
+		int i;
+
+		do {
+			i = scr2.nextInt();
+
+			if (i == 1 || i == 2 || i == 3 || i == 4 || i == 9) {
+				switch (i) {
+				case 1:
+					System.out.println("添加商品到购物车");
+					if (goodsManage.getGoodsSet().isEmpty()) { // 判断商品信息是否导入
+						System.out.println("还没有商品，记得导入商品信息哟！");
+					} else {
+						goodsManage.displayAllGoods();
+						shoppingCart.addGoodsToCart(goodsManage); // 添加商品到购物车
+					}
+					shoppingCartMan();
+					break;
+				case 2:
+					shoppingCart.updateNumInCart(); // 修改购物车中的商品数量
+					shoppingCartMan();
+					break;
+				case 3:
+					System.out.println("显示购物车中所有商品信息");
+					shoppingCart.displayAllInCart(); // 显示购物车中所有商品信息
+					shoppingCartMan();
+					break;
+				case 4:
+					System.out.println("结算：");
+					shoppingCart.settleAccounts(); // 结算
+					shoppingCartMan();
+					break;
+				case 9:
+					main(null);
+					break;
+				}
+			} else {
+				System.out.println("该数字没有对应的操作！");
+			}
+
+		} while (i != 9);
+
+	}
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		TestDemo test = new TestDemo();
+		test.mainMenu();
+		int x;
+
+		try {
+			x = sc.nextInt();
+			if (x >= 0 && x <= 2) {
+				switch (x) {
+				case 0:
+					break;
+				case 1:
+					test.goodsMan();
+					break;
+				case 2:
+					test.shoppingCartMan();
+					break;
+				}
+
+			} else {
+				System.out.println("该数字没有对应的操作！");
+				main(null);
+			}
+
+		} catch (InputMismatchException e) {
+			System.out.println("输入的不是整数，请重新开始!");
+			 main(null);
+		} catch (Exception e) {
+			System.out.println("出错了！！！");
+		}
+
+	}
+}

@@ -1,0 +1,11 @@
+package com.imooc.thread;
+
+public class Cat implements Runnable {
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

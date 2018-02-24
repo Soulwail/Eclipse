@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="E:\E\Eclipse-workspace\JavaProj"/>
+		<item value="E:\E\Eclipse-workspace\__MACOSX"/>
+		<item value="E:\E\Eclipse-workspace\__MACOSX\AnimalProj\src\com\imooc\test"/>
+	</list>
+	<section name="NewWizardAction">
+	</section>
+</section>

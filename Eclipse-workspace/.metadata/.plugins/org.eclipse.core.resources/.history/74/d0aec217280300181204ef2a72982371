@@ -1,0 +1,37 @@
+package com.imooc.comparator;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class EmployeeTest {
+
+	public static void main(String[] args) {
+        //定义Employee类的对象
+		Employee staff1=new Employee("emp001","张三",1800);
+		Employee staff2=new Employee("emp002","李四",2500);
+		Employee staff3=new Employee("emp003","王五",1600);
+        
+        //将对象添加到List中
+		List<Employee> list=new ArrayList<Employee>();
+        list.add(staff1);
+        list.add(staff2);
+        list.add(staff3);
+        
+        //输出排序前的数据
+        System.out.println("排序前：");
+        for(Employee l:list) {
+        	System.out.println(l);
+        }
+        
+        //排序
+        Collections.sort(list);
+        
+        //输出排序后的数据
+        System.out.println("排序后：");
+        for(Employee l:list) {
+        	System.out.println(l);
+        }
+	}
+
+}

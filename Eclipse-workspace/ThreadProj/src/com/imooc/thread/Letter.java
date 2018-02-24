@@ -1,0 +1,27 @@
+package com.imooc.thread;
+
+public class Letter implements Runnable {
+
+	char letter[] = new char[26];
+	
+	public Letter() {
+		for (int i = 0; i < letter.length; i++) {
+			letter[i] = (char) ('a' + i);
+		}
+	}
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		for (int i = 0; i < letter.length; i++) {
+			System.out.print(letter[i] + " ");
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+}

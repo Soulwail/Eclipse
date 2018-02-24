@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.imooc.work2.NonMotor"/>
+<fullyQualifiedTypeName name="com.imooc.work.Person"/>
+<fullyQualifiedTypeName name="com.imooc.message.Department"/>
+<fullyQualifiedTypeName name="javax.security.auth.Subject"/>
+<fullyQualifiedTypeName name="com.imooc.animal.Cat"/>
+<fullyQualifiedTypeName name="com.imooc.ifly.IFly"/>
+<fullyQualifiedTypeName name="com.imooc.play.Ball"/>
+<fullyQualifiedTypeName name="Inner_f"/>
+<fullyQualifiedTypeName name="com.imooc.active.Animal"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="com.imooc.student.Student"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="goods.GoodsManage"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="goods.ShoppingCart"/>
+<fullyQualifiedTypeName name="javax.swing.text.html.HTMLDocument.Iterator"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.util.Map.Entry"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="java.util.InputMismatchException"/>
+</qualifiedTypeNameHistroy>
