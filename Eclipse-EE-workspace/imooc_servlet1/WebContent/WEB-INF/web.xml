@@ -13,8 +13,20 @@
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>cn.java.servlet.LoginServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>Demo3Servlet</servlet-name>
+    <servlet-class>cn.java.servlet.Demo3Servlet</servlet-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>utf-8</param-value>
+    </init-param>
+  </servlet>
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Demo3Servlet</servlet-name>
+    <url-pattern>/Demo3Servlet</url-pattern>
   </servlet-mapping>
 </web-app>

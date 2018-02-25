@@ -10,13 +10,31 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginServlet extends HttpServlet {
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("我是doGet()方法");
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// 获取表单提交过来的数据
+		// getParameter()方法可以获取请求的参数信息
+		request.setCharacterEncoding("utf-8");
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		// 打印获取到的参数信息
+		System.out.println("username = " + username);
+		System.out.println("password = " + password);
+		// 如果username=admin,password=123则跳转到success.jsp,否则跳转到fail.jsp
+		// 1、通过转发实现跳转
+		if ("admin".equals(username) && "123".equals(password)) {
+			request.getRequestDispatcher("/success.jsp").forward(request, response);
+		}else {
+			// request.getRequestDispatcher("/fail.jsp").forward(request, response);
+			// 2、重定向
+			response.sendRedirect("/imooc_servlet1/fail.jsp");
+		}
+		
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("我是doPost()方法");
+		doGet(req, resp);
 	}
 
 }
